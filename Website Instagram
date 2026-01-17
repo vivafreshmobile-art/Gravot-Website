@@ -1,0 +1,928 @@
+<!doctype html>
+<html lang="mk">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Тодор Гравчев – персонален тренер и online coaching. 1:1 тренинг, план за исхрана, програма и следење прогрес. Контакт преку Instagram DM." />
+  <title>Тодор Гравчев | Coaching</title>
+
+  <style>
+    :root{
+      --bg:#07070a;
+      --panel:#0d0f14;
+      --panel2:#0b0c10;
+      --text:#eef1f7;
+      --muted:#a6adbb;
+      --line:rgba(255,255,255,.10);
+      --glow: rgba(255,130,40,.40);
+      --accent:#ff7a1a;
+      --accent2:#ffb35a;
+      --ok:#7CFF9B;
+      --shadow: 0 18px 55px rgba(0,0,0,.55);
+      --radius:18px;
+      --radius2:28px;
+      --max:1120px;
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Helvetica Neue", sans-serif;
+      background:
+        radial-gradient(1100px 700px at 20% 10%, rgba(255,122,26,.22), transparent 55%),
+        radial-gradient(800px 600px at 85% 25%, rgba(255,179,90,.14), transparent 55%),
+        radial-gradient(900px 700px at 50% 110%, rgba(255,122,26,.12), transparent 60%),
+        var(--bg);
+      color:var(--text);
+      overflow-x:hidden;
+    }
+
+    a{color:inherit; text-decoration:none}
+    .wrap{max-width:var(--max); margin:0 auto; padding:0 18px}
+
+    /* Top bar */
+    .top{
+      position:sticky;
+      top:0;
+      z-index:50;
+      backdrop-filter: blur(14px);
+      background: linear-gradient(to bottom, rgba(7,7,10,.85), rgba(7,7,10,.55));
+      border-bottom: 1px solid var(--line);
+    }
+    .topin{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:12px 0;
+      gap:12px;
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      min-width:190px;
+    }
+    .brand img{
+      width:44px;
+      height:44px;
+      border-radius:12px;
+      object-fit:cover;
+      box-shadow: 0 12px 30px rgba(255,122,26,.18);
+      border:1px solid rgba(255,255,255,.08);
+    }
+    .brand .t1{font-weight:850; letter-spacing:.4px}
+    .brand .t2{font-size:12px; color:var(--muted); margin-top:2px}
+    nav{
+      display:flex;
+      gap:16px;
+      align-items:center;
+      flex-wrap:wrap;
+      justify-content:center;
+    }
+    nav a{
+      font-size:13px;
+      color:rgba(238,241,247,.85);
+      padding:8px 10px;
+      border-radius:12px;
+      border:1px solid transparent;
+    }
+    nav a:hover{
+      border-color:rgba(255,255,255,.10);
+      background: rgba(255,255,255,.04);
+    }
+    .ctaTop{
+      display:flex; gap:10px; align-items:center; justify-content:flex-end; min-width:190px;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:11px 14px;
+      border-radius:14px;
+      font-weight:750;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.04);
+      transition: transform .08s ease, background .2s ease, border-color .2s ease;
+      white-space:nowrap;
+    }
+    .btn:hover{transform: translateY(-1px); border-color: rgba(255,255,255,.16); background: rgba(255,255,255,.06)}
+    .btnPrimary{
+      border-color: rgba(255,122,26,.45);
+      background: linear-gradient(135deg, rgba(255,122,26,.92), rgba(255,179,90,.85));
+      color:#141317;
+      box-shadow: 0 18px 45px rgba(255,122,26,.18);
+    }
+    .btnPrimary:hover{transform: translateY(-1px); filter:saturate(1.04)}
+
+    /* Hero */
+    .hero{
+      padding: 44px 0 18px;
+    }
+    .herogrid{
+      display:grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap:18px;
+      align-items:stretch;
+    }
+    .card{
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+      border:1px solid rgba(255,255,255,.10);
+      border-radius: var(--radius2);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+      position:relative;
+    }
+    .card::before{
+      content:"";
+      position:absolute; inset:-2px;
+      background: radial-gradient(650px 320px at 30% 10%, rgba(255,122,26,.18), transparent 60%);
+      pointer-events:none;
+    }
+    .heroLeft{
+      padding: 26px 22px 22px;
+    }
+    .tag{
+      display:inline-flex;
+      gap:8px;
+      align-items:center;
+      padding: 7px 10px;
+      border-radius: 999px;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(0,0,0,.20);
+      color:rgba(238,241,247,.86);
+      font-size:12px;
+    }
+    .tag .dot{
+      width:8px; height:8px; border-radius:999px;
+      background: var(--accent);
+      box-shadow: 0 0 18px var(--glow);
+    }
+
+    h1{
+      margin:14px 0 10px;
+      font-size: clamp(30px, 3.6vw, 52px);
+      line-height:1.06;
+      letter-spacing:-.7px;
+    }
+    .sub{
+      color:rgba(238,241,247,.80);
+      font-size: 15px;
+      line-height:1.6;
+      max-width: 56ch;
+      margin:0 0 16px;
+    }
+    .bullets{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:10px;
+      margin-top:14px;
+    }
+    .pill{
+      display:flex;
+      gap:10px;
+      align-items:flex-start;
+      padding: 12px 12px;
+      border-radius: 16px;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(0,0,0,.18);
+    }
+    .check{
+      width:20px;height:20px;border-radius:8px;
+      background: rgba(124,255,155,.16);
+      border:1px solid rgba(124,255,155,.30);
+      display:grid; place-items:center;
+      flex:0 0 auto;
+      margin-top:1px;
+    }
+    .check svg{width:14px;height:14px}
+    .pill b{display:block; font-size:13px}
+    .pill span{display:block; font-size:12px; color:var(--muted); margin-top:2px; line-height:1.45}
+
+    .heroBtns{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-top:16px;
+    }
+
+    /* Hero Right image */
+    .heroRight{
+      min-height: 420px;
+    }
+    .heroImg{
+      height:100%;
+      min-height: 420px;
+      position:relative;
+      display:flex;
+      align-items:flex-end;
+      justify-content:flex-start;
+      background:
+        linear-gradient(180deg, rgba(7,7,10,.10), rgba(7,7,10,.84)),
+        url("assets/pic4.png") center/cover no-repeat;
+    }
+    .heroImg::after{
+      content:"";
+      position:absolute; inset:0;
+      background:
+        radial-gradient(900px 500px at 20% 25%, rgba(255,122,26,.18), transparent 55%),
+        linear-gradient(90deg, rgba(7,7,10,.82), rgba(7,7,10,.18), rgba(7,7,10,.75));
+      pointer-events:none;
+    }
+    .heroBadge{
+      position:relative;
+      z-index:2;
+      margin:18px;
+      padding:14px 14px;
+      border-radius: 18px;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(0,0,0,.28);
+      max-width: 420px;
+    }
+    .heroBadge .big{
+      font-weight:900;
+      letter-spacing:.2px;
+      font-size:14px;
+    }
+    .heroBadge .small{
+      margin-top:6px;
+      color:rgba(238,241,247,.78);
+      font-size:12px;
+      line-height:1.5;
+    }
+
+    /* Sections */
+    section{padding: 22px 0}
+    .secTitle{
+      display:flex;
+      align-items:flex-end;
+      justify-content:space-between;
+      gap:16px;
+      margin: 6px 0 12px;
+    }
+    .secTitle h2{
+      margin:0;
+      font-size: clamp(20px, 2.2vw, 30px);
+      letter-spacing:-.4px;
+    }
+    .secTitle p{
+      margin:0;
+      color:var(--muted);
+      font-size:13px;
+      max-width:55ch;
+      line-height:1.55;
+    }
+
+    /* Offer cards */
+    .grid3{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:12px;
+    }
+    .offer{
+      padding: 16px 14px;
+      border-radius: var(--radius);
+      background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+      border:1px solid rgba(255,255,255,.10);
+      position:relative;
+      overflow:hidden;
+    }
+    .offer::before{
+      content:"";
+      position:absolute; inset:-1px;
+      background: radial-gradient(520px 280px at 20% 0%, rgba(255,122,26,.12), transparent 60%);
+      pointer-events:none;
+    }
+    .offer h3{margin:0 0 8px; font-size:15px; letter-spacing:.1px}
+    .offer ul{margin:0; padding-left:18px; color:rgba(238,241,247,.82); font-size:13px; line-height:1.6}
+    .offer li{margin:6px 0}
+    .kicker{
+      display:flex; gap:8px; align-items:center;
+      font-size:12px; color:rgba(238,241,247,.78);
+      margin-bottom:10px;
+    }
+    .icon{
+      width:34px; height:34px; border-radius:12px;
+      display:grid; place-items:center;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(0,0,0,.22);
+      box-shadow: 0 12px 30px rgba(0,0,0,.25);
+      flex:0 0 auto;
+    }
+    .icon svg{width:18px;height:18px}
+
+    /* Gallery */
+    .gallery{
+      display:grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap:12px;
+    }
+    .gMain{
+      border-radius: var(--radius2);
+      overflow:hidden;
+      border:1px solid rgba(255,255,255,.10);
+      background:
+        linear-gradient(180deg, rgba(7,7,10,.12), rgba(7,7,10,.86)),
+        url("assets/pic6.png") center/cover no-repeat;
+      min-height: 360px;
+      position:relative;
+    }
+    .gMain::after{
+      content:"";
+      position:absolute; inset:0;
+      background: radial-gradient(800px 420px at 20% 25%, rgba(255,122,26,.20), transparent 60%);
+      pointer-events:none;
+    }
+    .gSide{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap:12px;
+    }
+    .thumb{
+      border-radius: var(--radius2);
+      overflow:hidden;
+      border:1px solid rgba(255,255,255,.10);
+      min-height: 174px;
+      position:relative;
+      cursor:pointer;
+      background-size:cover;
+      background-position:center;
+    }
+    .thumb::after{
+      content:"";
+      position:absolute; inset:0;
+      background: linear-gradient(180deg, rgba(7,7,10,.10), rgba(7,7,10,.72));
+      opacity:.85;
+      transition:opacity .2s ease;
+      pointer-events:none;
+    }
+    .thumb:hover::after{opacity:.65}
+    .thumbLabel{
+      position:absolute; left:14px; bottom:14px; right:14px;
+      z-index:2;
+      padding:12px 12px;
+      border-radius: 16px;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(0,0,0,.26);
+    }
+    .thumbLabel b{display:block; font-size:13px}
+    .thumbLabel span{display:block; font-size:12px; color:var(--muted); margin-top:4px; line-height:1.45}
+
+    /* About + FAQ */
+    .split{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:12px;
+    }
+    .box{
+      padding:16px 14px;
+      border-radius: var(--radius2);
+      border:1px solid rgba(255,255,255,.10);
+      background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+      overflow:hidden;
+      position:relative;
+    }
+    .box::before{
+      content:"";
+      position:absolute; inset:-1px;
+      background: radial-gradient(520px 280px at 20% 0%, rgba(255,179,90,.10), transparent 60%);
+      pointer-events:none;
+    }
+    .box h3{margin:0 0 8px; font-size:15px}
+    .box p{margin:0; color:rgba(238,241,247,.80); line-height:1.65; font-size:13px}
+    details{
+      border-top:1px solid rgba(255,255,255,.10);
+      padding:10px 0;
+    }
+    details:first-child{border-top:none; padding-top:0}
+    summary{
+      cursor:pointer;
+      list-style:none;
+      font-weight:750;
+      font-size:13px;
+      color:rgba(238,241,247,.88);
+    }
+    summary::-webkit-details-marker{display:none}
+    details p{margin-top:8px; color:var(--muted)}
+    .hint{color:var(--muted); font-size:12px; margin-top:10px}
+
+    /* Final CTA */
+    .final{
+      padding: 18px 0 36px;
+    }
+    .ctaCard{
+      display:grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap:12px;
+      border-radius: var(--radius2);
+      border:1px solid rgba(255,255,255,.10);
+      background:
+        radial-gradient(900px 520px at 15% 30%, rgba(255,122,26,.16), transparent 60%),
+        linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+    .ctaText{
+      padding: 18px 16px;
+    }
+    .ctaText h2{margin:0 0 8px; font-size: clamp(18px, 2.3vw, 28px)}
+    .ctaText p{margin:0; color:rgba(238,241,247,.80); line-height:1.65; font-size:13px; max-width:60ch}
+    .ctaSteps{
+      margin-top:12px;
+      display:grid;
+      gap:10px;
+    }
+    .step{
+      display:flex; gap:10px; align-items:flex-start;
+      padding: 12px 12px;
+      border-radius: 16px;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(0,0,0,.18);
+    }
+    .num{
+      width:26px; height:26px; border-radius:10px;
+      background: rgba(255,122,26,.20);
+      border:1px solid rgba(255,122,26,.35);
+      display:grid; place-items:center;
+      font-weight:900; color:rgba(255,179,90,.95);
+      flex:0 0 auto;
+    }
+    .step b{display:block; font-size:13px}
+    .step span{display:block; font-size:12px; color:var(--muted); margin-top:2px; line-height:1.45}
+
+    .ctaImg{
+      background:
+        linear-gradient(180deg, rgba(7,7,10,.12), rgba(7,7,10,.88)),
+        url("assets/pic2.png") center/cover no-repeat;
+      position:relative;
+      min-height: 260px;
+    }
+    .ctaImg::after{
+      content:"";
+      position:absolute; inset:0;
+      background: linear-gradient(90deg, rgba(7,7,10,.75), rgba(7,7,10,.10), rgba(7,7,10,.85));
+      pointer-events:none;
+    }
+
+    footer{
+      border-top:1px solid var(--line);
+      padding: 16px 0 22px;
+      color:rgba(238,241,247,.65);
+      font-size:12px;
+    }
+    .foot{
+      display:flex;
+      justify-content:space-between;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+
+    /* Modal */
+    .modal{
+      position:fixed; inset:0; z-index:100;
+      display:none;
+      place-items:center;
+      background: rgba(0,0,0,.72);
+      padding: 18px;
+    }
+    .modal.open{display:grid}
+    .modalBox{
+      width:min(980px, 100%);
+      border-radius: 22px;
+      overflow:hidden;
+      border:1px solid rgba(255,255,255,.14);
+      background: rgba(10,10,14,.85);
+      box-shadow: 0 40px 110px rgba(0,0,0,.65);
+      position:relative;
+    }
+    .modalTop{
+      display:flex; justify-content:space-between; align-items:center;
+      padding: 12px 12px;
+      border-bottom:1px solid rgba(255,255,255,.10);
+      color:rgba(238,241,247,.85);
+      font-size:13px;
+    }
+    .x{
+      border:1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.06);
+      border-radius:12px;
+      padding:8px 10px;
+      cursor:pointer;
+      font-weight:800;
+    }
+    .modalImg{
+      width:100%;
+      display:block;
+      max-height: 75vh;
+      object-fit:contain;
+      background: rgba(0,0,0,.35);
+    }
+
+    /* Responsive */
+    @media (max-width: 980px){
+      .herogrid{grid-template-columns: 1fr}
+      .heroRight{min-height: 360px}
+      .heroImg{min-height: 360px}
+      .grid3{grid-template-columns: 1fr}
+      .gallery{grid-template-columns: 1fr}
+      .gSide{grid-template-columns: 1fr 1fr}
+      .thumb{min-height: 200px}
+      .split{grid-template-columns: 1fr}
+      .ctaCard{grid-template-columns: 1fr}
+      .ctaImg{min-height: 220px}
+      nav{display:none}
+      .ctaTop{min-width:auto}
+      .brand{min-width:auto}
+    }
+  </style>
+</head>
+
+<body>
+  <header class="top">
+    <div class="wrap">
+      <div class="topin">
+        <a class="brand" href="#top" aria-label="Почеток">
+          <img src="assets/logo.png" alt="Tose Gravchev Coaching Logo" />
+          <div>
+            <div class="t1">Тодор Гравчев</div>
+            <div class="t2">Coaching • 1:1 • Online</div>
+          </div>
+        </a>
+
+        <nav aria-label="Навигација">
+          <a href="#ponuda">Понуда</a>
+          <a href="#rezultat">Резултат</a>
+          <a href="#zaMene">За мене</a>
+          <a href="#prasanja">Прашања</a>
+        </nav>
+
+        <div class="ctaTop">
+          <a class="btn" href="https://www.instagram.com/tosegrav/" target="_blank" rel="noopener">Instagram</a>
+          <a class="btn btnPrimary" href="https://www.instagram.com/tosegrav/" target="_blank" rel="noopener">Пиши ми DM</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="top" class="wrap">
+    <section class="hero">
+      <div class="herogrid">
+        <div class="card heroLeft">
+          <div class="tag"><span class="dot"></span> Без изговори. Без лимити. Само резултати.</div>
+
+          <h1>Изгради тело што зборува наместо тебе.</h1>
+          <p class="sub">
+            1:1 тренинг и online coaching со јасен систем: план, дисциплина и следење на прогрес.
+            Ако сакаш реална трансформација — не мотивација за 2 дена — тука почнува.
+          </p>
+
+          <div class="heroBtns">
+            <a class="btn btnPrimary" href="https://www.instagram.com/tosegrav/" target="_blank" rel="noopener">
+              Пиши ми на Instagram DM
+              <span aria-hidden="true">→</span>
+            </a>
+            <a class="btn" href="#ponuda">Види ја понудата</a>
+          </div>
+
+          <div class="bullets">
+            <div class="pill">
+              <div class="check" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path d="M20 7L10 17l-5-5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div>
+                <b>План што се држи</b>
+                <span>Исхрана + тренинг што реално одговара на твојот живот, не на “идеален ден”.</span>
+              </div>
+            </div>
+
+            <div class="pill">
+              <div class="check" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path d="M20 7L10 17l-5-5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div>
+                <b>Следење прогрес</b>
+                <span>Корекции според резултати, не според чувство. Секој чекор со цел.</span>
+              </div>
+            </div>
+
+            <div class="pill">
+              <div class="check" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path d="M20 7L10 17l-5-5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div>
+                <b>Сила + естетика</b>
+                <span>Функционално силно тело што изгледа атлетски и издржливо.</span>
+              </div>
+            </div>
+
+            <div class="pill">
+              <div class="check" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path d="M20 7L10 17l-5-5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div>
+                <b>Јасни правила</b>
+                <span>Без магија. Без “тајни”. Само изведба и конзистентност.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card heroRight">
+          <div class="heroImg">
+            <div class="heroBadge">
+              <div class="big">Ветување:</div>
+              <div class="small">
+                “Ако го следиш планот — резултатите се неизбежни. Јас ти го давам системот. Ти ја даваш изведбата.”
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="ponuda">
+      <div class="secTitle">
+        <div>
+          <h2>Понуда (избери што ти треба)</h2>
+          <p>Три јасни опции. Без хаос. Без непотребни компликации.</p>
+        </div>
+      </div>
+
+      <div class="grid3">
+        <div class="offer">
+          <div class="kicker">
+            <div class="icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M12 21s-7-4.35-7-10a4 4 0 0 1 7-2.2A4 4 0 0 1 19 11c0 5.65-7 10-7 10Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <span>Највисок фокус</span>
+          </div>
+          <h3>1:1 Персонален тренинг</h3>
+          <ul>
+            <li>Техника, интензитет, прогресија</li>
+            <li>Структура по тренинг циклуси</li>
+            <li>Корекции во реално време</li>
+            <li>Цел: сила + форма, без повреди</li>
+          </ul>
+        </div>
+
+        <div class="offer">
+          <div class="kicker">
+            <div class="icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M7 17h10M7 13h10M7 9h10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                <path d="M6 21h12a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2Z" stroke="currentColor" stroke-width="2"/>
+              </svg>
+            </div>
+            <span>Најпопуларно</span>
+          </div>
+          <h3>Online Coaching (план + следење)</h3>
+          <ul>
+            <li>План за тренинг според цел и ниво</li>
+            <li>План за исхрана (реално изводлив)</li>
+            <li>Неделни корекции и насоки</li>
+            <li>Фокус на дисциплина и рутина</li>
+          </ul>
+        </div>
+
+        <div class="offer">
+          <div class="kicker">
+            <div class="icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M12 2v6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                <path d="M6 22h12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                <path d="M7 8h10l-1 14H8L7 8Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <span>Брз старт</span>
+          </div>
+          <h3>Програма / План (еднократно)</h3>
+          <ul>
+            <li>Тренинг програма 4–12 недели</li>
+            <li>Јасни упатства за прогресија</li>
+            <li>Мини-водич за исхрана</li>
+            <li>Идеално ако сакаш структуриран старт</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="rezultat">
+      <div class="secTitle">
+        <div>
+          <h2>Визија и атмосфера</h2>
+          <p>Ова е стилот: сериозно, дисциплина, работа. Не “фитнес глума”.</p>
+        </div>
+      </div>
+
+      <div class="gallery">
+        <div class="gMain" role="img" aria-label="Мотивациски постер"></div>
+
+        <div class="gSide">
+          <div class="thumb" data-img="assets/pic1.png"
+               style="background-image:url('assets/pic1.png')">
+            <div class="thumbLabel">
+              <b>Форма и симетрија</b>
+              <span>Естетика што се гради со години, не со трикови.</span>
+            </div>
+          </div>
+
+          <div class="thumb" data-img="assets/pic3.png"
+               style="background-image:url('assets/pic3.png')">
+            <div class="thumbLabel">
+              <b>Сила и карактер</b>
+              <span>Тренингот не ти гради само тело — ти гради стандард.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="zaMene">
+      <div class="secTitle">
+        <div>
+          <h2>За Тодор</h2>
+          <p>Твојот план ќе биде едноставен. Твојата изведба — сериозна.</p>
+        </div>
+      </div>
+
+      <div class="split">
+        <div class="box">
+          <h3>Што добиваш кога работиш со мене</h3>
+          <p>
+            Систем кој те тера да победиш: јасни цели, прогресија, правила за исхрана и реални корекции.
+            Нема “мотивација”. Има процес. Има резултат.
+          </p>
+          <p class="hint">Ако сакаш “лесно” — не сум за тебе. Ако сакаш трансформација — пиши DM.</p>
+        </div>
+
+        <div class="box">
+          <h3>Филозофија</h3>
+          <p>
+            Твоето тело е доказ за твојата рутина. Кога рутина е точна, резултатите доаѓаат автоматски.
+            Целта: атлетско, силно тело што се одржува цела година.
+          </p>
+          <p class="hint">Без изговори. Без лимити. Само резултати.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="prasanja">
+      <div class="secTitle">
+        <div>
+          <h2>Чести прашања</h2>
+          <p>Кратко и јасно. Ако нешто не е тука — прашај ме во DM.</p>
+        </div>
+      </div>
+
+      <div class="box">
+        <details>
+          <summary>Дали online coaching работи ако немам многу време?</summary>
+          <p>Да — ако си искрен. Планот се прави според твојот распоред, не според фантазија. Подобро 3 точни тренинга неделно, отколку 6 хаотични.</p>
+        </details>
+
+        <details>
+          <summary>Може ли без “строга диета”?</summary>
+          <p>Може. Ќе има правила и структури, но не мора да биде екстремно. Целта е одржливост + резултат.</p>
+        </details>
+
+        <details>
+          <summary>Колку брзо се гледа прогрес?</summary>
+          <p>Ако си конзистентен: први промени за 2–4 недели, сериозна разлика за 8–12 недели. Но “брзо” не победува — “конзистентно” победува.</p>
+        </details>
+
+        <details>
+          <summary>Како почнуваме?</summary>
+          <p>Пишуваш DM: цел, возраст, висина/тежина, искуство, колку дена можеш да тренираш и што сакаш (1:1 / online / план). Јас ти враќам со насока и следен чекор.</p>
+        </details>
+      </div>
+    </section>
+
+    <section class="final">
+      <div class="ctaCard">
+        <div class="ctaText">
+          <h2>Спремен да го искалиш твоето најсилно “јас”?</h2>
+          <p>
+            Не ми кажувај што сакаш. Кажи ми што си спремен да направиш.
+            Ако сакаш план што носи резултат — пишувај на Instagram.
+          </p>
+
+          <div class="ctaSteps">
+            <div class="step">
+              <div class="num">1</div>
+              <div>
+                <b>Пиши DM</b>
+                <span>“Сакам coaching” + цел (масa / дефиниција / сила).</span>
+              </div>
+            </div>
+            <div class="step">
+              <div class="num">2</div>
+              <div>
+                <b>Кратки информации</b>
+                <span>Висина, тежина, искуство, колку дена тренираш.</span>
+              </div>
+            </div>
+            <div class="step">
+              <div class="num">3</div>
+              <div>
+                <b>Почнуваме со систем</b>
+                <span>План → изведба → корекции → резултат.</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="heroBtns" style="margin-top:14px">
+            <a class="btn btnPrimary" href="https://www.instagram.com/tosegrav/" target="_blank" rel="noopener">
+              Пиши ми DM сега
+              <span aria-hidden="true">→</span>
+            </a>
+            <a class="btn" href="#ponuda">Понуда</a>
+          </div>
+        </div>
+
+        <div class="ctaImg" aria-label="Тренинг фотографија"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <div class="foot">
+        <div>© <span id="y"></span> Тодор Гравчев • Coaching</div>
+        <div><a href="https://www.instagram.com/tosegrav/" target="_blank" rel="noopener">@tosegrav</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modal for images -->
+  <div class="modal" id="modal" aria-hidden="true">
+    <div class="modalBox" role="dialog" aria-modal="true" aria-label="Преглед на слика">
+      <div class="modalTop">
+        <div id="modalTitle">Преглед</div>
+        <button class="x" id="close" type="button">Затвори</button>
+      </div>
+      <img id="modalImg" class="modalImg" alt="Преглед на слика" />
+    </div>
+  </div>
+
+  <script>
+    // year
+    document.getElementById('y').textContent = new Date().getFullYear();
+
+    // smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', (e)=>{
+        const id = a.getAttribute('href');
+        if(!id || id === '#') return;
+        const el = document.querySelector(id);
+        if(!el) return;
+        e.preventDefault();
+        el.scrollIntoView({behavior:'smooth', block:'start'});
+      });
+    });
+
+    // image modal
+    const modal = document.getElementById('modal');
+    const modalImg = document.getElementById('modalImg');
+    const modalTitle = document.getElementById('modalTitle');
+    const closeBtn = document.getElementById('close');
+
+    function openModal(src, title){
+      modal.classList.add('open');
+      modal.setAttribute('aria-hidden','false');
+      modalImg.src = src;
+      modalTitle.textContent = title || 'Преглед';
+    }
+    function closeModal(){
+      modal.classList.remove('open');
+      modal.setAttribute('aria-hidden','true');
+      modalImg.src = '';
+    }
+
+    document.querySelectorAll('.thumb').forEach(t=>{
+      t.addEventListener('click', ()=>{
+        const src = t.getAttribute('data-img');
+        const title = t.querySelector('b') ? t.querySelector('b').textContent : 'Преглед';
+        if(src) openModal(src, title);
+      });
+    });
+
+    modal.addEventListener('click', (e)=>{
+      if(e.target === modal) closeModal();
+    });
+    closeBtn.addEventListener('click', closeModal);
+    document.addEventListener('keydown', (e)=>{
+      if(e.key === 'Escape') closeModal();
+    });
+  </script>
+</body>
+</html>
